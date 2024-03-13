@@ -7,7 +7,7 @@ const InputFiltrador = ({ filtro, onFiltroChange }) => {
     <div className="inputFiltro">
       <input
         type="text"
-        placeholder="Filtrar por nombre"
+        placeholder="Filtrar por la inicial del nombre"
         value={filtro}
         onChange={(e) => onFiltroChange(e.target.value)}
       />

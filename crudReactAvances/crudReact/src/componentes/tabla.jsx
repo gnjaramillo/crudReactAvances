@@ -7,8 +7,8 @@ const Tabla = ({ datos }) => {
       <thead>
         <tr>
           <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripción</th>
+          <th>NOMBRE</th>
+          <th>DESCRIPCIÓN</th>
         </tr>
       </thead>
       <tbody>
