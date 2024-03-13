@@ -1,23 +1,28 @@
-// Array.js
+// Arreglo.js
 import React, { useState } from 'react';
 import Tabla from './tabla';
 import InputFiltrador from './inputFiltrador';
+import Select from './select';
+import InformacionRegistros from './informacionRegistros';
 
 const Arreglo = ({ datos }) => {
   const [filtro, setFiltro] = useState("");
-  
-  const filtroDatos = datos.filter((persona) => //se filtra en base a la inicial del nombre
-  persona.nombre.toLowerCase().startsWith(filtro.toLowerCase())
-);
+  const [cantidadRegistros, setCantidadRegistros] = useState(5);
 
+  const filtroDatos = datos.filter(persona => 
+    persona.nombre.toLowerCase().startsWith(filtro.toLowerCase())
+  ).slice(0, cantidadRegistros);
 
   return (
-      <div>
-        <InputFiltrador filtro={filtro} onFiltroChange={setFiltro} />
-        <br />
-        <br />
-        <Tabla datos={filtroDatos} />
-      </div>
+    <div>
+      <InputFiltrador filtro={filtro} onFiltroChange={setFiltro} />
+      <Select onChange={(e) => setCantidadRegistros(parseInt(e.target.value))} />
+      <br />
+      <br />
+      <Tabla datos={filtroDatos} />
+      
+      <InformacionRegistros registrosActuales={filtroDatos.length} totalRegistros={datos.length} />
+    </div>
   );
 }
 
