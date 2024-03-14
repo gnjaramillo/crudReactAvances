@@ -2,6 +2,8 @@
 import React from 'react';
 import './inputFiltrador.css'
 
+
+//Recibe filtro y onFiltroChange como propiedades para manejar el estado del filtro.
 const InputFiltrador = ({ filtro, onFiltroChange }) => {
   return (
     <div className="inputFiltro">

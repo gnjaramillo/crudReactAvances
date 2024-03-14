@@ -21,7 +21,7 @@ const Arreglo = ({ datos }) => {
       <br />
       <Tabla datos={filtroDatos} />
       
-      <InformacionRegistros registrosActuales={filtroDatos.length} totalRegistros={datos.length} />
+      <InformacionRegistros cantidadRegistros={filtroDatos.length} totalRegistros={datos.length} />
     </div>
   );
 }
